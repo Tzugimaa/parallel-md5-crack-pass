@@ -45,12 +45,12 @@ int main(int argc, char **argv)
 #pragma omp for
 		for (int a = 0; a < 26; a++)
 		{
-			byte password[5] = { 97 + a };
+			byte password[5] = { 48 + a };
 			byte* one =   StringHashToByteArray("95dbb48a7b21a9cff9221eb0b431fa3c");
-			for (password[1] = 97; password[1] < 123; password[1]++)
-				for (password[2] = 97; password[2] < 123; password[2]++)
-					for (password[3] = 97; password[3] < 123; password[3]++)
-						for (password[4] = 97; password[4] < 123; password[4]++) {
+			for (password[1] = 48; password[1] < 123; password[1]++)
+				for (password[2] = 48; password[2] < 123; password[2]++)
+					for (password[3] = 48; password[3] < 123; password[3]++)
+						for (password[4] = 48; password[4] < 123; password[4]++) {
 							byte *hash = SHA256(password, 5, 0);
 							if (matches(one, hash))
 								printResult(password, hash);
